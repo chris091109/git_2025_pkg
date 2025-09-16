@@ -1,0 +1,17 @@
+(defpoll time :interval "1s" "date +%H:%M")
+(defpoll date :interval "1s" "date +'%A, %d %B %Y'")
+
+(defwidget clock []
+  (box :orientation "vertical" :halign "center" :class "clock-box"
+    (label :text time :class "clock-time")
+    (label :text date :class "clock-date")))
+
+(defwindow clock_win
+  :namespace "eww-blur"
+  :monitor 0
+  :geometry (geometry :x "8px" :y "20px" :width "325px" :anchor "bottom right")
+  :stacking "bg"
+  :visible true
+  :exclusive true  
+  (clock))
+

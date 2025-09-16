@@ -1,0 +1,55 @@
+/* ~/.config/rofi/config.rasi */
+* {
+    /* Gruvbox color scheme */
+    background:     #282828;
+    background-alt: #83a598;
+    foreground:     #ebdbb2;
+    selected:       #458588;
+    active:         #689d6a;
+    urgent:         #cc241d;
+    
+    font: "JetBrains Mono Nerd Font 12";
+}
+
+configuration {
+    modi: "drun,window,run";
+    show-icons: true;
+    display-drun: "Apps";
+    display-window: "Windows";
+    display-run: "Run";
+}
+
+/* DEFAULT WINDOW - Search only mode (simple) */
+window {
+    location: south;
+    anchor: south;
+    width: 300px;
+    y-offset: -50px;
+    border: 2px;
+    border-color: @background-alt;
+    background-color: @background;
+    border-radius: 8px;
+}
+
+mainbox {
+    spacing: 0px;
+    margin: 5px;
+    children: [ "inputbar" ];
+}
+
+inputbar {
+    spacing: 5px;
+    padding: 10px;
+    children: [ "prompt", "entry" ];
+    background-color: @background;
+}
+
+prompt {
+    text-color: @background-alt;
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: #928374;
+    text-color: @foreground;
+}
